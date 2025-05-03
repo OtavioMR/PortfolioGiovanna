@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     scroll-behavior: smooth;
     font-family: "Open Sans", sans-serif;
-  }
+}
 
-  :root {
+:root {
     --navegar: #149ddd;
     --primaria: #4f46e5;
     --secundaria: #7c3aed;
@@ -18,14 +18,14 @@
     --claro: #e2e8f0;
     --vidro: #rgba(255, 255, 255, 0.1);
     --navegacao-gradiente: linear-gradient(to left, rgba(79, 70, 229, 0.5), rgba(124, 58, 237, 0.8), rgba(15, 23, 42, 2.0));
-  }
-  
-  body {
+}
+
+body {
     background-color: var(--escuro);
     color: var(--claro);
-  }
+}
 
-header{
+header {
     display: flex;
     background: var(--navegacao-gradiente);
     justify-content: center;
@@ -35,7 +35,7 @@ header{
 .navegacao {
     position: fixed;
     background: var(--navegacao-gradiente);
-     width: 100%;
+    width: 100%;
     z-index: 100;
     top: 0;
     padding: 1.5rem;
@@ -45,7 +45,7 @@ header{
     display: flex;
     justify-content: center;
     list-style: none;
-    align-items: center; 
+    align-items: center;
     justify-content: space-around;
 }
 
@@ -54,14 +54,11 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 2rem; /* espaço entre os elementos filhos */
-    margin-block-start: 8rem; /* espaçamento relativo à div acima */
-}
-
-.nome-perfil {
-    color: var(--maisescuro);
-    font-size: 2rem;
-    text-align: center;
+    gap: 2rem;
+    /* espaço entre os elementos filhos */
+    margin-block-start: 8rem;
+    /* espaçamento relativo à div acima */
+    margin-block-end: 8rem;
 }
 
 .foto-perfil {
@@ -70,10 +67,113 @@ header{
     width: 100%;
     max-width: 300px;
     height: auto;
-    aspect-ratio: 5 / 5; /* mantém proporção similar a 400x500 */
+    aspect-ratio: 5 / 5;
+    /* mantém proporção similar a 400x500 */
     object-fit: cover;
     box-shadow: 0px 0px 20px 1px var(--secundaria);
 }
+
+.dados {
+    background-color: var(--claro);
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.conteudo-dados {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Linha do sublinhado só até onde tem texto */
+.escrita-sublinhada {
+    display: inline-block;
+    position: relative;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    color: var(--maisescuro);
+    width: fit-content; /* <<< ESSENCIAL */
+  }
+
+  .escrita-sublinhada::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #54c9ff, #af38ff, #680aff);
+    border-radius: 5px;
+}
+
+  
+  /* Espaçamento dentro da tabela */
+  .tabela-sobre td {
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem; /* ajuste como quiser */
+    color: var(--maisescuro);
+  }
+  
+  /* Para deixar a tabela mais compacta, você pode usar: */
+  .tabela-sobre {
+    border-spacing: 4px;
+  }
+  
+
+.tabela-sobre td:first-child {
+    font-weight: bold;
+    color: var(--maisescuro);
+    width: 40%;
+}
+
+.tabela-sobre td:last-child {
+    text-align: left;
+}
+
+/* Responsivo */
+@media (max-width: 400px) {
+    .escrita-sublinhada {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .tabela-sobre {
+        font-size: 1rem;
+    }
+
+    .tabela-sobre td {
+        display: block;
+        width: 100%;
+        padding: 0.3rem 0;
+    }
+
+    .tabela-sobre tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsividade extra */
 @media (max-width: 768px) {
@@ -85,5 +185,3 @@ header{
         font-size: 1.5rem;
     }
 }
-
-  
