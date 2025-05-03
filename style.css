@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  :root {
+    --navegar: #149ddd;
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisescuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: #rgba(255, 255, 255, 0.1);
+    --navegacao-gradiente: linear-gradient(to left, rgba(79, 70, 229, 0.5), rgba(124, 58, 237, 0.8), rgba(15, 23, 42, 2.0));
+  }
+  
+  body {
+    background-color: var(--escuro);
+    color: var(--claro);
+  }
+
+header{
+    display: flex;
+    background: var(--navegacao-gradiente);
+    justify-content: center;
+    align-items: center;
+}
+
+.navegacao {
+    position: fixed;
+    background: var(--navegacao-gradiente);
+     width: 100%;
+    z-index: 100;
+    top: 0;
+    padding: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem; /* espaço entre os elementos filhos */
+    margin-block-start: 8rem; /* espaçamento relativo à div acima */
+}
+
+.nome-perfil {
+    color: var(--maisescuro);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.foto-perfil {
+    border-radius: 50%;
+    border: solid 4px var(--escuro);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 5 / 5; /* mantém proporção similar a 400x500 */
+    object-fit: cover;
+    box-shadow: 0px 0px 20px 1px var(--secundaria);
+}
+
+/* Responsividade extra */
+@media (max-width: 768px) {
+    .foto-perfil {
+        max-width: 200px;
+    }
+
+    .nome-perfil {
+        font-size: 1.5rem;
+    }
+}
+
+  
