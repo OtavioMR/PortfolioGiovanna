@@ -86,6 +86,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    color: var(--maisescuro);
 }
 
 /* Linha do sublinhado só até onde tem texto */
@@ -95,10 +96,11 @@ header {
     padding: 0.5rem 0;
     font-size: 2rem;
     color: var(--maisescuro);
-    width: fit-content; /* <<< ESSENCIAL */
-  }
+    width: fit-content;
+    /* <<< ESSENCIAL */
+}
 
-  .escrita-sublinhada::before {
+.escrita-sublinhada::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -109,32 +111,46 @@ header {
     border-radius: 5px;
 }
 
-  
-  /* Espaçamento dentro da tabela */
-  .tabela-sobre td {
-    font-size: 1.5rem;
-    padding: 0.4rem 0.8rem; /* ajuste como quiser */
+
+/* Espaçamento dentro da tabela */
+.tabela-sobre {
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.tabela-sobre td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding: 0.3rem 0.5rem;
+    vertical-align: top;
     color: var(--maisescuro);
-  }
-  
-  /* Para deixar a tabela mais compacta, você pode usar: */
-  .tabela-sobre {
-    border-spacing: 4px;
-  }
-  
+    font-size: 1.5rem;
+}
+
+
 
 .tabela-sobre td:first-child {
     font-weight: bold;
     color: var(--maisescuro);
     width: 40%;
+    white-space: nowrap;
+    /* <-- Impede quebra de linha */
 }
+
 
 .tabela-sobre td:last-child {
     text-align: left;
+    word-break: break-word;
+    /* <- Permite quebra se for necessário */
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
+
 /* Responsivo */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .escrita-sublinhada {
         font-size: 2rem;
         text-align: center;
@@ -158,20 +174,6 @@ header {
         margin-bottom: 0.5rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
